@@ -1,7 +1,8 @@
 
+from string import ascii_uppercase
 from functools import reduce
 
-countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+countriesli = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -10,7 +11,7 @@ print('\n--- MAP ---\n')
 
 def upplist(alist):
     return alist.upper()
-uppcountries = map(upplist, countries)
+uppcountries = map(upplist, countriesli)
 print(list(uppcountries))
 
 def square(num):
@@ -26,7 +27,7 @@ def removeland(land_country):
         return False
     else:
         return True
-landtest_countries = filter(removeland, countries)
+landtest_countries = filter(removeland, countriesli)
 print(list(landtest_countries))
 
 def remove6char(char_country):
@@ -35,7 +36,7 @@ def remove6char(char_country):
         return False
     else: 
         return True
-chartest_countries = filter(remove6char, countries)
+chartest_countries = filter(remove6char, countriesli)
 print(list(chartest_countries))
 
 def remove_e(ecountry):
@@ -43,7 +44,7 @@ def remove_e(ecountry):
         return False
     else:
         return True
-no_ecountry = filter(remove_e, countries)
+no_ecountry = filter(remove_e, countriesli)
 print(list(no_ecountry))
 
 
@@ -96,13 +97,36 @@ print('\n--- NB°11 ---\n')
 
 def sentencecount(x, y):
     return (x + ', ' + y)
-sent_countries = reduce(sentencecount, countries[:-1])
-print(f'{sent_countries} and {countries[-1]} are north European countries')
+sent_countries = reduce(sentencecount, countriesli[:-1])
+print(f'{sent_countries} and {countriesli[-1]} are north European countries')
 
 
 print('\n--- NB°12 ---\n')
 from day_14_data import countries
-print(countries)
+
+def categorize_countries(pattern):
+    '''Retourne les pays contenant le motif donné'''
+    return [country for country in countries if pattern in country.lower()]
+    # return list(filter(lambda country: pattern in country.lower(), countries))
+print(categorize_countries('land'))
+
+
+print('\n--- NB°13 ---\n')
+import string
+
+def returning_dictionary(listcountries):
+    letters = list(ascii_uppercase)
+    return {letter:len([country for country in listcountries if country[0] == letter]) for letter in letters}
+test = returning_dictionary(countries)
+print(test)
+
+
+
+
+
+
+
+
 
 
 
