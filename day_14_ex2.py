@@ -121,9 +121,25 @@ test = returning_dictionary(countries)
 print(test)
 
 
+print('\n--- NB°14 ---\n')
+
+def get_first_ten_countries(listc):
+    return listc[:10]
+
+print(get_first_ten_countries(countries))
 
 
+print('\n--- NB°15 ---\n')
 
+def slicer(nb):
+    def get_last_ten_countries(listc):
+        return listc[-nb:]
+    return get_last_ten_countries
+
+last10 = slicer(10)
+last5 = slicer(5)
+print(last10(countries))
+print(last5(countries))
 
 
 
