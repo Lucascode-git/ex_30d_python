@@ -33,13 +33,4 @@ print(sorted_points)
 distance = max(sorted_points) - min(sorted_points)
 print(distance)
 
-
-
-
-
-
-
-
-
 print()
-
