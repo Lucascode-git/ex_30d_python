@@ -37,17 +37,8 @@ writters = ['BARACK OBAMA', 'MICHELLE OBAMA']
 info_texts = [obama, michelle]
 
 writter_winfos = [{k:v} for k, v in zip(writters, info_texts)]
-
-
 print(writter_winfos)
 
-    
-
-
-
-
-
-print('\n ------ EX 2 ----------')
 
 
 
