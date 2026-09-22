@@ -11,7 +11,7 @@ with open('day_19_emailbig.txt', 'r') as em:
     
 from_mail = r'From (\S+@\S+)+'
 only_from_mail = re.findall(from_mail, text)
-#print(only_from_mail)
+print(only_from_mail)
 
 print('\n ex 2 ------------------\n')
 
