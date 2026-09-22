@@ -9,3 +9,8 @@ for list in ltot:
     
     test.append(list)
 print(test)
+
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item2', 'item3', 'item5'}
+# it means (A\B)∪(B\A)
+print(st2.symmetric_difference(st1))
