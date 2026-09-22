@@ -30,7 +30,7 @@ def text_to_compare(text1, text2):
 
 def clean_text(list_texts):
     ''' Return a list where values are the both cleaned texts '''
-    clean_char = r"[a-zA-Z]\w+(?:['-]\w+)*"
+    clean_char = r"\w+(?:['-]\w+)*"
     clean_list_both_texts = []
     for text in list_texts:
         clean_list_both_texts.append(re.findall(clean_char, text.lower()))
@@ -39,7 +39,7 @@ def clean_text(list_texts):
 
 
 def remove_support_words(listof_cleantexts):
-    ''' '''
+    ''' Return a list where values are the both texts without stop words '''
     set_stopwords = set(stop_words)
     set_list_cleantexts = []
     for text in listof_cleantexts:
@@ -52,6 +52,7 @@ def remove_support_words(listof_cleantexts):
     
 
 def check_text_similarity(super_clean_texts):
+    ''' Return a Jaccard coeff to show how similar are both texts'''
     text1 = super_clean_texts[0]
     text2 = super_clean_texts[1]
     bothtext = list(text1) + list(text2)

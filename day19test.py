@@ -14,3 +14,10 @@ st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3', 'item5'}
 # it means (A\B)∪(B\A)
 print(st2.symmetric_difference(st1))
+print()
+
+t = ['jhgd lucas hdu']
+lu = r'lucas'
+for w in t:
+    if lu in w:
+        print('OUI--------------------')
